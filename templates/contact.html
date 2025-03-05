@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - MS Prime Tech Services{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg border-0 bg-dark">
+    <div class="card-header bg-dark text-white py-3 border-bottom border-secondary">
+        <h2 class="mb-0 fw-bold">Contact Us</h2>
+    </div>
+    <div class="card-body p-4">
+        <form action="https://api.web3forms.com/submit" method="POST" class="needs-validation" novalidate>
+            <input type="hidden" name="access_key" value="6ae82029-8b9f-493e-b755-47c942182a0d">
+            <input type="hidden" name="from_name" value="MS Prime Tech Services Contact Form">
+            <input type="hidden" name="redirect" value="{{ url_for('index', _external=True) }}">
+            <input type="hidden" name="subject" value="New Contact Form Submission - MS Prime Tech Services">
+            <input type="hidden" name="replyto" value="">
+
+            <div class="mb-4">
+                <label for="name" class="form-label fw-bold text-white">Name</label>
+                <input type="text" class="form-control form-control-lg bg-dark text-white" id="name" name="name" required>
+                <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="form-label fw-bold text-white">Email</label>
+                <input type="email" class="form-control form-control-lg bg-dark text-white" id="email" name="email" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+
+            <div class="mb-4">
+                <label for="message" class="form-label fw-bold text-white">Message</label>
+                <textarea class="form-control form-control-lg bg-dark text-white" id="message" name="message" rows="6" required></textarea>
+                <div class="invalid-feedback">Please enter your message.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-100 mt-3">Submit Message</button>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const emailInput = document.querySelector('#email');
+
+    form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        // Set reply-to email
+        document.querySelector('input[name="replyto"]').value = emailInput.value;
+
+        form.classList.add('was-validated');
+    });
+});
+</script>
+{% endblock %}

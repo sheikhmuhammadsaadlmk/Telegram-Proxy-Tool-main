@@ -1,0 +1,180 @@
+/* Adding sticky ads styles to existing CSS */
+.sticky-ads { 
+    position: fixed; 
+    bottom: 0; left: 0; 
+    width: 100%; min-height: 70px; max-height: 200px; 
+    padding: 5px 0; 
+    box-shadow: 0 -6px 18px 0 rgba(9,32,76,.1); 
+    -webkit-transition: all .1s ease-in; transition: all .1s ease-in; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: var(--bs-dark); 
+    z-index: 20; 
+    border-top: 1px solid var(--bs-secondary);
+} 
+
+.sticky-ads-close { 
+    width: 30px; height: 30px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 12px 0 0; 
+    position: absolute; right: 0; top: -30px; 
+    background-color: var(--bs-dark);
+    box-shadow: 0 -6px 18px 0 rgba(9,32,76,.08); 
+} 
+
+.sticky-ads .sticky-ads-close svg { 
+    width: 22px; 
+    height: 22px; 
+    fill: var(--bs-light); 
+} 
+
+.sticky-ads .sticky-ads-content { 
+    overflow: hidden; 
+    display: block; 
+    position: relative; 
+    height: 70px; 
+    width: 100%; 
+    margin-right: 10px; 
+    margin-left: 10px; 
+}
+
+/* Custom styles to complement Bootstrap */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bs-dark) !important;
+    color: var(--bs-light) !important;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar {
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+    background-color: var(--bs-dark) !important;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+}
+
+.proxy-info {
+    margin-bottom: 2rem;
+}
+
+.form-control {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--bs-gray-700);
+    background-color: var(--bs-dark) !important;
+    color: var(--bs-light) !important;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: var(--bs-primary);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+footer {
+    margin-top: auto;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.copyright-text {
+    line-height: 1.8;
+}
+
+/* Enhanced form styling */
+.form-label {
+    margin-bottom: 0.5rem;
+    color: var(--bs-light);
+}
+
+.form-control-lg {
+    font-size: 1rem;
+}
+
+/* Animation for buttons */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Desktop - animation only on hover */
+@media (min-width: 1024px) {
+    .btn-primary:hover {
+        animation: pulse 1s infinite;
+    }
+}
+
+/* Mobile and Tablet - continuous animation */
+@media (max-width: 1023px) {
+    #openTelegram {
+        animation: pulse 1.5s infinite;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .card {
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+    }
+
+    .copyright-text {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Dark mode specific */
+.bg-dark {
+    background-color: #1a1a1a !important;
+}
+
+.border-secondary {
+    border-color: #2d2d2d !important;
+}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}MS Prime Tech - Telegram Proxy Tool{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2>Telegram Proxy Tool</h2>
+    </div>
+    <div class="card-body">
+        <div class="proxy-info">
+            <div class="mb-3">
+                <label class="form-label">Server:</label>
+                <div id="server" class="form-control"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Port:</label>
+                <div id="port" class="form-control"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Secret:</label>
+                <div id="secret" class="form-control"></div>
+            </div>
+        </div>
+        <div class="d-grid gap-2">
+            <button id="openTelegram" class="btn btn-primary">
+                <i class="fab fa-telegram me-2"></i>Open in Telegram
+            </button>
+            <button id="generateNew" class="btn btn-secondary">Generate New Proxy</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/proxy.js') }}"></script>
+{% endblock %}
